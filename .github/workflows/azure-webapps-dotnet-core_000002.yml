@@ -70,13 +70,13 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  deploy_DEV:
+  deploy_STG:
     permissions:
       contents: none
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Development'
+      name: 'Staging'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
